@@ -21,10 +21,10 @@
             </div>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li><a href="#"><br><a href="../index.html">Home</a></a></li>
-                    <li id='aboutUs'><a href="#"><br><a href="Courses.html">Courses</a></a></li>
-                    <li><a href="#"><br>Login</a></li>
-                    <li><a href="#"><br>Register</a></li>
+                    <li><a href="#"><br><a href="../index.php">Home</a></a></li>
+                    <li id='aboutUs'><a href="#"><br><a href="Courses.php">Courses</a></a></li>
+                    <li><a href="../logIn.php"><br>Login</a></li>
+                    <li><a href="../Register.php"><br>Register</a></li>
                     
                 </ul>
             </div>

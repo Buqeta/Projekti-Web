@@ -30,10 +30,10 @@
             </div>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li id='home'><a href="index.html"><br>Home</a></li>
-                    <li><a href="subPages/Courses.html"><br>Courses</a></li>
-                    <li><a href="#courses"><br>Login</a></li>
-                    <li><a href="#"><br>Register</a></li>
+                    <li id='home'><a href="index.php"><br>Home</a></li>
+                    <li><a href="subPages/Courses.php"><br>Courses</a></li>
+                    <li><a href="logIn.php"><br>Login</a></li>
+                    <li><a href="Register.php"><br>Register</a></li>
                     <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
