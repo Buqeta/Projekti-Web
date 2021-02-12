@@ -34,6 +34,7 @@ if(isset($_POST['LogInBtn'])){
                 if($row['Password'] == $password){
                     session_start();
                     $_SESSION['userID'] = $row['UserID'];
+                    $_SESSION['Username'] = $row['Username'];
                     $_SESSION['FirstName'] = $row['First_Name'];
                     $_SESSION['LastName'] = $row['Last_Name'];
                     $_SESSION['E_Mail'] = $row['E_Mail'];
@@ -57,10 +58,10 @@ if(isset($_POST['LogInBtn'])){
         }
     }
 }
-//else{
-   // header("Location: ../logIn.php?error=notSubmit");
-  // exit();
-//}
+else{
+    header("Location: ../logIn.php?error=notSubmit");
+   exit();
+}
 
 
 

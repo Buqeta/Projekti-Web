@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 function validate(){
 
     const first_name = document.getElementById("first-name");
@@ -90,7 +84,7 @@ function error(element, message){
   //  const form_element = element.parentElement;
   //  form_element.classList.remove("error");
     //form_element.classList.add("success");
-}
+//}
 
 //function successP(element, message){
   //  const p = element.nextElementSibling;

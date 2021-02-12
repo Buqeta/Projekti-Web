@@ -24,16 +24,6 @@
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
-                    <?php
-                    if (isset($_SESSION["Role"]) && $_SESSION['Role'] == 1) {
-                    
-                        echo '<li><a href="#">Dashboard</a></li>';
-                    
-                    }
-                    if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 0){
-                        echo '<li><a href="#">Account</a></li>';
-                    }
-                    ?>
                     <li><a href="logIn.php">Log In</a></li>
                     <li id="register"><a href="#" id="aReg">Register</a></li>
                     <!--li><a href="#"><br>Login</a></li-->
@@ -42,7 +32,7 @@
         </div>
         <div class="main" id="main-div">
             
-            <form id="form" action = "Includes/registerVerify.php" method = "post" onsubmit = "return validate()">
+            <form id="form" action = "Includes/registerVerify.php" method = "post" onsubmit = "return validate();">
                     <h2>Register</h2>
                
                 <div class="form-element">
@@ -76,6 +66,29 @@
                     <p>Error Message</p>
                 </div>
                 <input type="submit" id="submit_btn" value="Register" name = "RegisterBtn"></input>
+                <?php
+                    if(isset($_GET['error'])){
+                
+                        echo '<p style = "visibility: visible; color: white; text-align: center;">';
+                        if($_GET['error'] == 'emptyFields')
+                            echo 'Fields cannot be empty!</p>';
+                        else if($_GET['error'] == 'invalidEmail')
+                            echo 'Invalid email!</p>';
+                        else if($_GET['error'] == 'invalidPassword')  
+                            echo 'Invalid password!</p>';
+                        else if($_GET['error'] == 'passwordsDontMatch')
+                            echo 'Passwords must match!</p>';
+                        else if($_GET['error'] == 'usernameTaken')
+                            echo 'Username is already taken!</p>';
+                        else if($_GET['error'] == 'emailTaken')
+                            echo 'Email already exists!</p>';
+                        else if($_GET['error'] == 'sqlerror2')
+                            echo 'Something went wrong!</p>';
+                        else
+                            echo 'You have successfully registered!</p>';
+                    
+                    }
+                ?>
             </form>
         </div>
         <div class="contacts" id="contacts-div">

@@ -1,5 +1,4 @@
 <?php
-    //include 'Includes/loginVerify.php';
     session_start();
 ?>
 <!DOCTYPE html>
@@ -31,10 +30,11 @@
                     
                     }
                     if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 0){
-                        echo '<li><a href="#">Account</a></li>';
+                        echo '<li><a href="account.php">Account</a></li>';
+                        header("Location: account.php");
                     }
                     ?>
-                    <li id="login"><a href="#" id="aLog">Log In</a></li>
+                    <li id="login"><a href="logIn.php" id="aLog">Log In</a></li>
                     <li><a href="Register.php" >Register</a></li>
                     <!--li><a href="#"><br>Login</a></li-->
                 </ul>
@@ -56,6 +56,27 @@
                     <p>Error Message</p>
                 </div>
                 <input type="submit" id="submit_btn" name = "LogInBtn" value = "Log In"></input>
+                <?php
+                    if(isset($_GET['error'])){
+                    ?>
+                        <p <?php echo 'style = "visibility: visible; color: white; text-align: center;"'?>>
+                        <?php 
+                            if($_GET['error'] == 'emptyFields')
+                                echo 'Fields cannot be empty!';
+                            else if($_GET['error'] == 'wrongPassword')
+                                echo 'Wrong password!';
+                            else if($_GET['error'] == 'noUser')  
+                                echo 'This user doesn\'t exist!';
+                            else if($_GET['error'] == 'sqlError')
+                                echo 'Something went wrong!';
+                            else
+                                echo 'You have successfully logged in!';
+                        ?>
+                        
+                        </p>
+                    <?php    
+                    }
+                    ?> 
                 <a href = "Register.php">Create an account</a>
             </form>
         </div>

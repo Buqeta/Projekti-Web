@@ -8,7 +8,6 @@ function validate(){
     const username_Value = username.value;
     const password_Value = password.value;
 
-    var successCounter = 0;
 
     if(username_Value === "" && password_Value === ""){
         error(username, "Username cannot be blank!");
