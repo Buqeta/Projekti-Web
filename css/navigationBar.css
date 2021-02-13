@@ -1,4 +1,4 @@
-*{
+/**{
     margin:0;
     padding:0;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -11,14 +11,14 @@ body {
 
 .navBar {
     
- /*   background-image: linear-gradient(to right, rgba(168, 166, 197, 0.829), rgba(6, 21, 160, 0.856), rgba(152, 157, 219, 0.795));*/
+ /*   background-image: linear-gradient(to right, rgba(168, 166, 197, 0.829), rgba(6, 21, 160, 0.856), rgba(152, 157, 219, 0.795));/
     background-color:rgb(6, 6, 95);
     display:flex;
     flex-direction: row;
     height:85px;
     /*transition: width 3s;/*
     border-color: rgb(196, 196, 189);
-    box-shadow:5px 10px 5px rgba(182, 163, 163, 0.2);*/
+    box-shadow:5px 10px 5px rgba(182, 163, 163, 0.2);/
     
 }
 .navBar:hover{
@@ -26,8 +26,8 @@ body {
     height:100px;
     background-color:rgb(255, 255, 255);
     color:blue;
-   /* background-image: linear-gradient(to right, rgba(254, 254, 255, 0.829), rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.795));*/
-    /*overflow:hidden*/
+   /* background-image: linear-gradient(to right, rgba(254, 254, 255, 0.829), rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.795));/
+    /*overflow:hidden/
 }
 
 
@@ -44,32 +44,32 @@ body {
 }
 .navList{
     display:flex;
-    flex-direction:row; /*sie bone si se bone */
-    justify-content: flex-end; /*e qon listen ne te djatht te ekranit*/
+    flex-direction:row; /*sie bone si se bone /
+    justify-content: flex-end; /*e qon listen ne te djatht te ekranit/
     
     
     
     
 }
 #home{
-    /*background-image: linear-gradient(to right, rgba(254, 254, 255, 0.829), rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.795));*/
+    /*background-image: linear-gradient(to right, rgba(254, 254, 255, 0.829), rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.795));/
     background-color:rgba(255, 255, 255, 0.938);
 }
 
 #aboutUs {
-    /*Rrin i bardhe butoni i  aboutus kur jemi ne ate faqe*/
+    /*Rrin i bardhe butoni i  aboutus kur jemi ne ate faqe/
     background-color:rgba(255, 255, 255, 0.938);
 }
 
 
 .navList li {
-     list-style-type: none; /*largon bullets */
-    /* border: 1px solid none;  */
-    height: 85px; /*lartesia e "butonit" te listes*/
-    width:90px; /*gjeresia e listes*/
+     list-style-type: none; /*largon bullets /
+    /* border: 1px solid none;  /
+    height: 85px; /*lartesia e "butonit" te listes/
+    width:90px; /*gjeresia e listes/
     text-align:center; /*vendos txt ne mes*/
     /*margin:0;
-    padding:0;  */
+    padding:0;  /
    
 
 }
@@ -94,7 +94,104 @@ body {
 #ul2 a:hover{
     color:rgba(57, 9, 190, 0.74)
 }
+*/
 
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    background-color:#89cff0;
+}
+
+.navBar{
+    background-color:white;
+    display:flex;
+    flex-direction: row;
+    /*height: 8vh;   */
+}
+
+.navFillim {
+    flex:1;
+    justify-content:flex-start;
+    align-items: flex-start;
+   
+}
+.navFund {
+    flex:1;
+    justify-content:flex-end;
+   
+}
+.navList{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.navList li {
+    list-style-type: none; 
+    height: 8vh;
+    width:90px; 
+    text-align:center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#home{
+    background-color:#89cff0;
+    height:fit;
+}
+#home a{
+    color: white;
+}
+
+.navList li a{
+    text-decoration: none;  
+    color:#0A2D62;
+    font-size: 110%;
+    /*width:100%;*/
+    font-weight: bold;
+    padding:5px;
+    /*margin: 0;*/
+}
+#logo {
+    width: 20%;
+    height: 8vh;
+}
+.navList li:hover {
+    background-color:rgba(14, 85, 190, 0.352);
+    
+}
+#ul2 a:hover{
+    color:white;
+}
+
+/*butoni per responsive*/
+
+.butoni{
+    position:absolute;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height:20px;
+    margin-top: 20px;
+    right:1rem
+}
+
+.butoni .bar {
+    height:3px;
+    width:100%;
+    background-color: rgb(15, 15, 15);
+    border-radius: 10px;
+}
+
+#dashboard {
+    background-color:#89cff0;
+    height:fit;
+    padding:5px;
+}
+  
 
 
 

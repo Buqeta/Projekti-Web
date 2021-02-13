@@ -1,5 +1,5 @@
 
-.upperMain {
+/*.upperMain {
     display:flex;
     flex-direction:column;
     
@@ -13,25 +13,25 @@
     display: flex;
     justify-content:space-evenly;
     align-items: center;
-    padding-bottom: 75px; /*Me largu pak vijen e poshtme*/
+    padding-bottom: 75px; /*Me largu pak vijen e poshtme/
     
 }
 .upper-UpperMain img {
     width:150px;
 }
 .upper-UpperMain img:hover {
-    /*width:120px;*/
+    /*width:120px;/
     transform: scale(0.9); 
     /*Per sa me transformu, me rrit imazhin. 
     Nese esht 1 nuk ndryshon fare, mbi nje rritet, nen 1
-    zvogelohet*/
-    transition: transform .3s;  /*Shpejtesia e rritjes*/
+    zvogelohet/
+    transition: transform .3s;  /*Shpejtesia e rritjes/
 }
 
 #mendeley {
     width:120px;
      /*Kta e kom bo tveqant, seplse by default ka qene pak me e 
-     madhe se tjerat*/
+     madhe se tjerat/
 }
 
 .bottom-border{
@@ -41,11 +41,11 @@
     
 }
 
-/*Down upperMain*/
+/*Down upperMain/
 .down-UpperMain {
     display:flex;
     flex-direction: column;
-    /* justify-content:center; */
+    /* justify-content:center; /
     margin:50px;
     padding:10px;
     
@@ -66,9 +66,141 @@
     color:rgba(107, 106, 104, 0.712);
 }
 
-/*Mid Main*/
+/*Mid Main/
 .midMain {
     background-color: rgba(157, 179, 219, 0.658);
+    height:500px;
+    display:flex;
+    align-items: center;
+    justify-content:space-evenly;
+    
+}
+
+.midMain-text {
+    /* padding-left: 30px; /
+    color:rgba(16, 6, 104, 0.637);
+    font-size:larger;
+    
+}
+.midMain img{
+    width:35%;
+    
+}
+
+/*downMain/
+.downMain {
+    display:flex;
+    flex-direction:column;
+    margin-top: 200px;
+}
+
+.upper-downMain {
+    
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+    /*e ben pershkallzimin e ngjyrave te cekura, prej te majtes te e djathta/
+    background-image: linear-gradient(to right, rgba(200, 210, 233, 0.315),
+     rgba(184, 204, 223, 0.281), rgba(1200, 210, 233));
+    box-shadow:20px 20px 20px rgba(208, 171, 219, 0.342);
+    
+     
+}
+
+.down-downMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    
+    
+}
+/* .first-down-downMain {
+
+
+} /
+
+
+.second-down-downMain {
+   display:flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+   padding-top: 50px;
+   
+
+}
+.second-down-downMain img{
+    width:150px;
+    padding-left:40px;
+}
+
+.bottomMain {
+    display:flex;
+    padding-top:150px;
+    padding-bottom: 150px;
+    justify-content: space-around;
+    background-color:rgba(192, 188, 180, 0.37);
+}
+*/
+
+.upperMain {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin:80px;
+    margin-bottom: 0px;
+}
+
+.upper-UpperMain{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-bottom: 75px;
+}
+.upper-UpperMain img {
+    width:150px;
+}
+.upper-UpperMain img:hover {
+    transform: scale(0.8); 
+    transition: transform .5s;  
+}
+
+#mendeley {
+    width:120px;
+}
+
+.bottom-border{
+    border-bottom: 1px solid white;
+}
+
+/*Down upperMain*/
+.down-UpperMain {
+    display:flex;
+    flex-direction: column;
+    margin:50px;
+    padding:10px;
+}
+.down-UpperMain h1 {
+    text-align:center;
+    color:rgba(45, 13, 184, 0.726);
+}
+.sub-downUpperMain{
+    display:flex;
+    justify-content:space-between;
+    margin:120px;
+    text-align: center;
+}
+
+
+.sub-items h3 {
+    color:rgba(45, 13, 184, 0.726);
+}
+
+/*Mid Main*/
+.midMain {
+    background-color: #71c2f4;
     height:500px;
     display:flex;
     align-items: center;
@@ -91,20 +223,13 @@
 .downMain {
     display:flex;
     flex-direction:column;
-    margin-top: 200px;
 }
 
 .upper-downMain {
-    
     display:flex;
     justify-content: space-evenly;
     align-items:center;
-    /*e ben pershkallzimin e ngjyrave te cekura, prej te majtes te e djathta*/
-    background-image: linear-gradient(to right, rgba(200, 210, 233, 0.315),
-     rgba(184, 204, 223, 0.281), rgba(1200, 210, 233));
-    box-shadow:20px 20px 20px rgba(208, 171, 219, 0.342);
-    
-     
+    background-image: linear-gradient(to right, #89cff0, #71c2f4, #60b3f7, #5ca3f7, #6691f4);
 }
 
 .down-downMain {
@@ -141,8 +266,13 @@
     padding-top:150px;
     padding-bottom: 150px;
     justify-content: space-around;
-    background-color:rgba(192, 188, 180, 0.37);
+    background-color:#71c2f4;
 }
+
+.transform{
+    color:rgb(210, 240, 255);
+}
+
 
 
 

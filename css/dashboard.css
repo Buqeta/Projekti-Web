@@ -1,0 +1,82 @@
+
+
+.dash-container {
+    display:flex;
+   /* border: 3px solid rgb(187, 183, 183);*/
+    border-radius:10px;
+    width:95%;
+    height:600px;
+   /* justify-content:space-between;*/
+    margin-left:40px;
+    margin-top:65px;
+
+    
+}
+
+.dash-left {
+    width:20%;
+    border: 3px solid rgb(187, 183, 183);
+    padding-top:80px;
+    padding-left:20px;
+    background-color:rgba(14, 117, 185, 0.842);
+}
+.dash-left a {
+    display:inline;
+}
+
+.dash-right{
+    margin-left:20px;
+    width:100%;
+    border: 3px solid rgb(187, 183, 183);
+    padding-top:80px;
+    padding-left:20px;
+}
+
+.dash-right , table, td, th {
+    border:1px solid rgba(102, 119, 156, 0.445);
+   /* border-collapse:collapse;*/
+}
+/*Stilizimi i listes se studenteve*/
+#dashTab{
+    border-collapse: collapse;
+    width:100%
+}
+#dashTab td, #dashtab th{
+    border:1px solid rgba(83, 83, 124, 0.5);
+    padding:8px;
+}
+
+#dashTab tr:nth-child(even){
+    background-color:#f2f2f2;
+}
+
+#dashTab tr:hover {
+    background-color: #ddd;
+}
+#dashTab th {
+padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.deletebutoni {
+    width: 100%;
+    background-color: #2f89b3b2;
+    color: white;
+    padding: 14px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.dashText{
+    color: #ECECF6;
+    text-shadow: -1px -1px 1px #FFFFFF, 1px 1px 1px #000000;
+    
+    font-size: 50px;
+    padding-top:30px;
+    padding-left: 30px;
+}
+
