@@ -1,0 +1,110 @@
+
+
+@media only screen and (max-width: 500px) {
+    .butoni {
+        display:flex;
+    }
+
+    .navList {
+        display:none;
+        flex-direction: column;
+        width:100%;
+    }
+
+    .navBar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navList li {
+        text-align: center;
+        width:500px;
+        height:50px;
+    }
+
+    .navList.active {
+        display:flex;
+    }
+
+    #logo{
+        margin-left: 210px;
+    }
+
+    /*Pjesa e sliderit*/
+    .slideNumber img{
+        width:500px;
+    }
+
+    .slideText {
+        font-size:40px;
+        margin-top: -355px;
+        margin-left: 150px;;
+    
+    }
+
+    .pika {
+        height:15px;
+        width:15px;
+    }
+
+    .upper-UpperMain {
+        flex-direction: column;
+
+    }
+
+    .upper-UpperMain a{
+        padding:10px;
+    }
+
+    .sub-downUpperMain{
+        flex-direction: column;
+        margin:auto;
+        margin-top: 20px;
+       
+    }
+
+    .sub-items {
+        margin-top: 30px;
+    }
+
+    .midMain{
+        flex-direction: column;
+    }
+
+    .midMain img{
+        width:60%;
+    }
+
+    .upper-downMain{
+        flex-direction: column;
+    }
+
+    .upper-downMain img {
+        width:60%;
+    }
+
+    .first-down-downMain{
+        padding:10px;
+    }
+    .bottomMain{
+        flex-direction: column;
+    }
+
+    .bottomMain img{
+        width:80%;
+    }
+
+    /*COurses*/
+
+    .math {
+        height:555px;
+    }
+   /* .slide img {
+        object-fit:contain;
+    }*/
+
+
+   
+   
+   
+}

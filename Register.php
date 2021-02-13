@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Register/Register_Style.css" type="text/css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     <body>
         <div class='navBar'>
@@ -20,6 +21,13 @@
                     </li>
                 </ul>
             </div>
+            <!--Hamburgeri-->
+            <a href='#' class='butoni'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+
+            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
@@ -98,5 +106,6 @@
 
         </div>
           <script type="text/javascript" src="Register/Register_JS.js"></script> 
+          <script type="text/javascript" src="JavaScript/responsive.js"></script>
     </body>
 </html>

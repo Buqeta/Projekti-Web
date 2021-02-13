@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Login/logIn_Style.css" type="text/css">
+        <link rel="stylesheet" href="css/responsive.css" type="text/css">
     </head>
     <body>
         <div class='navBar'>
@@ -19,16 +20,25 @@
                     </li>
                 </ul>
             </div>
+            <!--Hamburgeri-->
+            <a href='#' class='butoni'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+
+            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <?php
-                    if (isset($_SESSION["Role"]) && $_SESSION['Role'] == 1) {
-                    
-                        echo '<li><a href="#">Dashboard</a></li>';
-                    
-                    }
+                        if (isset($_SESSION["role"]) && $_SESSION['role'] == 1) {
+                    ?>
+                    <li><a href="subpages/dashboard.php">Dashboard</a></li>
+                    <?php
+                        }
+                    ?>
+                    <?php
                     if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 0){
                         echo '<li><a href="account.php">Account</a></li>';
                         header("Location: account.php");
@@ -84,5 +94,6 @@
 
         </div>
         <script type = "text/javascript" src="Login/logIn_JS.js"></script>
+        <script type="text/javascript" src="JavaScript/responsive.js"></script>
     </body>
 </html>

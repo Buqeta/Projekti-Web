@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="Photos/Logoja/llogojaPerf.png" >
         <link rel="stylesheet" href="css/navigationBar.css">
         <link rel="stylesheet" href="css/mainHeader.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/sliderStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
         
         
         <title>
@@ -28,26 +34,94 @@
                 </ul>
 
             </div>
+            <!--Hamburgeri-->
+            <a href='#' class='butoni'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+
+            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li id='home'><a href="index.php"><br>Home</a></li>
                     <li><a href="subPages/Courses.php"><br>Courses</a></li>
                     <li><a href="logIn.php"><br>Login</a></li>
                     <li><a href="Register.php"><br>Register</a></li>
+
+                    <?php
+                        if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
+                    ?>
+
+                    <a href="../views/dashboard.php">
+                        <li><a href="subPages/dashboard.php">Dashboard</a></li>
+                    </a>
+                    <?php
+                        }
+                    ?>
                     <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
         
+        <div class ='slider-container'>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>1/7</div>
+                    <img src="Photos/sliderimg/s1.jpg" style="width:100%; height:650px;">
+                    <p class="slideText">Online Geek</p>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>2/7</div>
+                    <img src="Photos/sliderimg/Math.jpg" style="width:100%; height:650px">
+                    <div class="slideText">Math</div>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>3/7</div>
+                    <img src="Photos/sliderimg/s3.jpg" style="width:100%; height:650px">
+                    <div class="slideText">Science</div>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>4/7</div>
+                    <img src="Photos/sliderimg/s4.jpg" style="width:100%; height:650px">
+                    <div class="slideText">Humanities</div>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>5/7</div>
+                    <img src="Photos/sliderimg/s5.jpeg" style="width:100%; height:650px">
+                    <div class="slideText">Economics</div>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>6/7</div>
+                    <img src="Photos/sliderimg/s5.jpeg" style="width:100% ; height:650px">
+                    <div class="slideText">Computing</div>
+                </div>
+                <div class ='slide fade'>
+                    <div class='slideNumber'>7/7</div>
+                    <img src="Photos/sliderimg/s7.jpeg" style="width:100%; height:650px">
+                    <div class="slideText">Online geek</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)"><</a>
+                <a class="next" onclick="plusSlides(1)">></a>
+                <br>
+                <div style="text-align: center;">
+                    <span class="pika" onclick="currentSlide(1)"></span>
+                    <span class="pika" onclick="currentSlide(2)"></span>
+                    <span class="pika" onclick="currentSlide(3)"></span>
+                    <span class="pika" onclick="currentSlide(4)"></span>
+                    <span class="pika" onclick="currentSlide(5)"></span>
+                    <span class="pika" onclick="currentSlide(6)"></span>
+                    <span class="pika" onclick="currentSlide(7)"></span>
 
+                </div>
+
+            </div>
         <!--headeri-->
-        <div id="header"> 
+        <!--div id="header"> 
             <div class='innerBackimg'>
                 <h1>Success doesn't come to you,<br>
                 YOU GO TO IT</h1>
                 
             </div>
-        </div>
+        </div-->
 
         <!--maini-->
         <div class='main'>
@@ -166,6 +240,9 @@
 
             </div>
         </div>
+        <script type="text/javascript" src="JavaScript/slider.js"></script>
+        <script type="text/javascript" src="JavaScript/responsive.js"></script>
+
 
         <!--footer-->
         <div class='footer'>
