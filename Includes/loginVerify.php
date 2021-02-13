@@ -1,8 +1,5 @@
 <?php
 
-$user = $_POST['username'];
-
-echo "<p>".$user."</p>";
 
 
 if(isset($_POST['LogInBtn'])){

@@ -85,8 +85,11 @@
                         else if($_GET['error'] == 'sqlerror2')
                             echo 'Something went wrong!</p>';
                         else
-                            echo 'You have successfully registered!</p>';
-                    
+                            echo '';
+                    }
+                    if(isset($_GET['success'])){
+                        if($_GET['success'] == 'true')
+                            echo '<p style = "visibility: visible; color: white; text-align: center;">You have successfully registered!</p>';
                     }
                 ?>
             </form>

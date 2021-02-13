@@ -68,16 +68,37 @@
 
 .main{
     background-image: linear-gradient(to bottom, #0a2d62, #21407e, #34559b, #486bb9, #5b81d8);
-    height: 100vh;
+    height: 94vh;
+    overflow: auto;
 }
 
 #welcome{
     text-align: right;
+    margin-right: 30px;
+}
+
+#logoutForm{
+    text-align: right;
+    margin-right: 20px;
+    height: 30px;
+}
+
+#logout{
+    height: 100%;
+    width: 12%;
+    background-color: #5b81d8;
+    border-radius: 5px;
+    border: none;
+    font-size: 95%;
+    font-weight: bold;
 }
 
 #selectDiv{
     height: 10%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+
 }
 
 #enrollForm{
@@ -114,4 +135,235 @@
     border-radius: 5px;
     border: none;
     font-size: 95%;
+    font-weight: bold;
+}
+
+
+#unenrollForm{
+    height: 80px;
+    position:absolute;
+}
+
+#errorMessage{
+    font-size: medium;
+}
+
+#yourCourses{
+    margin: 1%;
+}
+
+#coursesDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.courses{
+    width: 180px;
+    margin: 1%;
+    height: 85px;
+    border-radius: 10px;
+    background-color: #6e96f29e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.p{
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*-------smartphone (portrait and landscape)---------*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .navBar{
+        height: 6vh;
+    }
+
+    .navList li {
+       height: 6vh;
+       width: 25%;
+    }
+
+    .navList li a{
+        font-size: 150%;
+    }
+
+    #logo {
+        height: 6vh;
+        width: 52%;
+    }
+    .main{
+        height: 94vh;
+        
+    }
+
+    #welcome{
+        font-size: 40px;
+        margin-bottom: 18px;
+        margin-top: 18px;
+    }
+
+    #logoutForm{
+        height: 50px;
+    }
+    
+    #logout{
+        font-size: xx-large;
+        width: 20%;
+    }
+
+    #selectDiv{
+        height: 6%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #enrollForm{
+        height: 80%;
+        top: 10%;
+        width: 100%;
+        left: 0%;
+        right: 0%;
+        
+    }
+
+    
+    #label{
+        font-size: xx-large;
+    }
+    
+    #select {
+        width: 45%;
+        height: 70%;
+        font-size: x-large;
+        margin: 10px;
+    }
+    
+    #select option{
+        color: black;
+        font-size: xx-small;
+    }
+    
+    #button{
+        height: 70%;
+        width: 12%;
+        font-size: x-large;
+        margin: 5px;
+
+    }
+    
+    #unenrollForm{
+        height: 80px;
+        position:absolute;
+    }
+
+    #errorMessage{
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    #yourCourses{
+        font-size: xxx-large;
+        margin-top: 40px;
+    }
+    
+    .courses{
+        width: 370px;
+        margin: 3%;
+        height: 180px;
+        display: flex;
+    }
+    
+    
+    .p{
+        font-size: xx-large;
+    }
+
+
+    
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    #logo {
+        width: 45%;
+    }
+
+    .navList li {
+        width: 25%;
+    }
+
+    .navList li a{
+        font-size: 150%;
+    }
+
+    #welcome{
+        font-size: 30px;
+    }
+
+    #logoutForm{
+        height: 40px;
+    }
+    
+    #logout{
+        font-size: 22px;
+    }
+
+    #selectDiv{
+        height: 10%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    #enrollForm{
+        height: 90%;
+        top: 0%;
+        width: 100%;
+        left: 0%;
+    }
+    
+    #label{
+        font-size: x-large;
+        margin-left: 30px;    
+    }
+    
+    #select {
+        width: 45%;
+        height: 50%;
+        font-size: large;
+        margin: 10px;
+    }
+    
+    #select option{
+        color: black;
+        width:100%;
+    }
+    
+    #button{
+        height: 50%;
+        font-size: larger;
+        font-weight: bold;
+        margin: 5px;
+    }
+
+    #errorMessage{
+        font-size: larger;
+        text-align: center;
+    }
+
+    #yourCourses{
+        font-size: xx-large;
+    }
+
+    
 }

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "Includes/getCoursesUser.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,23 +25,25 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <li id="login"><a href="account.php" id="aLog">Account</a></li>
-                    <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
         <div class="main" id="main-div">
             <h3 id="welcome">Welcome, <?php echo $_SESSION['Username']?></h3>
+            <form id = "logoutForm" action = 'Includes/logout.php' method = "post">
+                <input type = "submit" id = 'logout' name  = 'logoutBtn' value = 'Logout'></input>
+            </form>
 
             <div id = "selectDiv">
             <form action = "Includes/enroll.php" method="POST" id="enrollForm">
-                <label id = "label">Select a course</label>
+                <label id = "label">Select a course: </label>
                 <select name = "Courses" id = "select">
                 <option value="Early Math">Early Math</option>
                 <option value="Kindergarten">Kindergarten</option>
                 <option value="1st-8th grade Math">1st-8th grade Math</option>
                 <option value="Arithmetic">Arithmetic</option>
                 <option value="Basic Geometry">Basic Geometry</option>
-                <option value="Pre-algbebra">Pre-algbebra</option>
+                <option value="Pre-algebra">Pre-algebra</option>
                 <option value="Algebra basics">Algebra basics</option>
                 <option value="Algebra 1">Algebra 1</option>
                 <option value="High school geometry">High school geometry</option>
@@ -82,9 +85,44 @@
                 <option value="Computer Science">Computer Science</option>
                 </select>
 
-                <input type = "submit" name = "enroll" value = "Enroll" id="button">
+                <input type = "submit" name = "enroll" value = "Enroll" id="button"></input>
+                <input type = "submit" name = "unenroll" value = "Unenroll" id="button"></input>
+                <?php
+                    if(isset($_GET['error'])){
+                        
+                        echo '<p id = "errorMessage">';
+                        if($_GET['error'] == 'alreadyEnrolled')
+                            echo 'You can\'t enroll in that course, because you\'re already enrolled!';
+                        else if($_GET['error'] == 'insert')
+                            echo 'Something went wrong!';
+                        else if($_GET['error'] == 'courseID')  
+                            echo 'Something went wrong!';
+                        else if($_GET['error'] == 'notEnrolled')
+                            echo 'You can\'t unenroll from that course, because you\'re not enrolled!';
+                        else if($_GET['error'] == 'delete')  
+                            echo 'Something went wrong!';
+                        else if($_GET['error'] == 'courseID2')  
+                            echo 'Something went wrong!';
+                        else
+                            echo '';
+                        
+                        echo '</p>';
+                    }
+                ?>
             </form>
             </div> 
 
+            <h3 id = "yourCourses">Your courses</h3>
+            <div id = coursesDiv>
+
+                <?php
+                    foreach($coursesUser as $course){
+                        echo '<div class = "courses">';
+                        echo '<p class = "p" name = "course">'.$course.'</p>';
+                        echo '</div>';
+                    }
+                ?>
+            </div>
         </div>
-        <h1>sds</h1>
+    </body>
+</html>
