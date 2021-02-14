@@ -113,7 +113,7 @@
                                 echo "</table>";
                             }
                             else {
-                                echo "Nuk ka shkruar asnje mesazh".$idjia;
+                                echo "This user hasn't completed any contact forms.";
                             }
                             mysqli_close($conn); 
                         
