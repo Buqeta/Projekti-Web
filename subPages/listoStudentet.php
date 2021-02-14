@@ -1,3 +1,5 @@
+<?php?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +8,8 @@
         <link rel="stylesheet" href="../css/navigationBar.css">
         <link rel="stylesheet" href="../css/mainHeader.css">
         <link rel="stylesheet" href="../css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+
         
 
     </head>
@@ -23,11 +27,18 @@
                 </ul>
 
             </div>
+            <!--Hamburgeri-->
+            <a href='#' class='butoni'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+
+            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="../index.php"><br>Home</a></li>
                     <li id='dashboard'><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="LogOut.php">Logout<a></li>
+                    <li><a href="../includes/logout.php">Logout<a></li>
                     <!--li><a href="subPages/Courses.php"><br>Courses</a></li>
                     <li><a href="logIn.php"><br>Login</a></li>
                     <li><a href="Register.php"><br>Register</a></li-->
@@ -55,30 +66,35 @@
         ?>
         <div class='dash-container'>
             <div class='dash-left'>
-                <a href="#">Kurset e pergjithshme</a><br>
-                <a href="#">Kliko ketu per te shtuar kurse te reja</a><br>
-                <a href="#">Kliko ketu per te menaxhuar studentet</a>
+                <a href="dashCourses.php">Active Courses</a><br>
+                <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
+                <a href="#">Edit Students</a>
 
             </div>
             <div class ='dash-right'>
-                <table id="dashTab">
+                <table class="dashTab dashtabres" >
                     <tr> 
                         <td>ID</td>
                         <td>Name</td>
                         <td>Surname</td>
                         <td>Username</td>
                         <td>Email</td>
+                        <td>Courses</td>
+                        
+                        <!--td>User_Course_ID</td-->
+
                         <!--td>Course</td-->
-                        <td>Delete User</td>
+                        <td>Unenroll user</td>
                     </tr>
                     <?php
                         require_once("../includes/connectDB.php");
                      
-                        $sql="SELECT * from user where Role=0";
+                        $sql="SELECT * 
+                            from user 
+                            where Role=0";
+                        //$sql="SELECT * from user u where u.Role=1";
                         $result=mysqli_query($conn,$sql);
-
-
-                    
+                
                        if(mysqli_num_rows($result)>0) {
                              while($row=mysqli_fetch_array($result)) {
                     ?>
@@ -88,10 +104,18 @@
                                     <td><?php echo $row['Last_Name'];?></td>
                                     <td><?php echo $row['Username'];?></td>
                                     <td><?php echo $row['E_Mail'];?></td>
+                                    <!--td><?php //echo $row['Course_Name'];?></td-->
+                                    <!--td><?php //echo $row['User_Course_ID'];?></td-->
+                                    <td>
+                                        <form action='showLendet.php' method="post">
+                                            <input type="hidden" name="lend_Us" value="<?php echo $row['UserID']; ?>"-->
+                                            <button type="submit" class="deletebutoni" name="lendUserbtn"class="deletebtn">Show</button>
+                                        </form>
+                                    </td>
                                     <td>
                                         <form action='fshijStdentet.php' method="post">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['UserID']; ?>">
-                                            <button type="submit"class="deletebutoni" name="deletebtn"class="deletebtn">DELETE</button>
+                                            <button type="submit" class="deletebutoni" name="deletebtn"class="deletebtn">Delete</button>
                                         </form>
                                     </td>
 
@@ -118,6 +142,7 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="../JavaScript/responsive.js"></script>
     </body>
 
 

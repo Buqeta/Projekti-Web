@@ -50,7 +50,7 @@
 
             <!--Body-->
             
-        <div class='courses'>
+        <div class='courses dashCours'>
             <div class='math items'>
                 <div class='course_icon'>
                     <img src="../Photos/icons/math.png" class="course_icon">

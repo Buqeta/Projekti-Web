@@ -31,12 +31,18 @@
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
-                    <?php
+                    <!--?php
                         if (isset($_SESSION["role"]) && $_SESSION['role'] == 1) {
                     ?>
-                    <li><a href="subpages/dashboard.php">Dashboard</a></li>
-                    <?php
+                    <li><a href="subpages/dashboard.php">Dashboard</a></li-->
+                    <!--?php
                         }
+                    ?-->
+                    <?php
+                    if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 1){
+                        echo '<li><a href="subPages/dashboard.php">Dashboard</a></li>';
+                        header("Location: subPages/dashboard.php");
+                    }
                     ?>
                     <?php
                     if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 0){

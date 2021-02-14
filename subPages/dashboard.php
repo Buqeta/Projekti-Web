@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +10,8 @@
         <link rel="stylesheet" href="../css/mainHeader.css">
         <link rel="stylesheet" href="../css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+
         
 
     </head>
@@ -24,72 +29,47 @@
                 </ul>
 
             </div>
+            <!--Hamburgeri-->
+            <a href='#' class='butoni'>
+                <span class='bar'></span>
+                <span class='bar'></span>
+                <span class='bar'></span>
+
+            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="../index.php"><br>Home</a></li>
                     <li id='dashboard'><a href="dashboard.php"><br>Dashboard</a></li>
                     <li><a href="../includes/LogOut.php"><br>Logout<a></li>
-                    <!--li><a href="subPages/Courses.php"><br>Courses</a></li>
-                    <li><a href="logIn.php"><br>Login</a></li>
-                    <li><a href="Register.php"><br>Register</a></li-->
-                    
-                    <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
 
 
-
+    <?php
+        if (isset($_SESSION["Role"]) && $_SESSION['Role'] == '1') {
+    ?>
         <h1 class='dashText'>Dashboard</h1>
-        <!--table>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name </td>
-                 <td>Username </td>
-                <td>Email</td>
-                <td>Modify</td>
-                <td>Delete user</td>
-        </tr>
-        </table-->
+        <!--h3 id="welcome">Welcome, <?php// echo $_SESSION['Username']?></h3-->
         <div class='dash-container'>
             <div class='dash-left'>
-                <a href="#">Kurset e pergjithshme</a><br>
-                <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
-                <a href="listoStudentet.php">Kliko ketu per te menaxhuar studentet</a>
-
+                    <a href="dashCourses.php">Active Courses</a><br>
+                    <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
+                    <a href="listoStudentet.php">Edit Students</a>
             </div>
             <div class ='dash-right'>
-                <div>
-                    <!--h4>Tabela</h4>
-                    <table>
-                        <tr> 
-                            <td>Course ID</td>
-                            <td>Course Name</td>
-                        </tr>
-
-                    </table-->
-                </div>
-                <div>
-                <!--table id='userat'>
-                    <tr> 
-                        <td>Student Name</td>
-                        <td>Surname</td>
-                        <td>Username</td>
-                        <td>Email</td>
-                        <td>Course</td>
-                        <td>Fshij</td>
-
-                    </tr>
-
-                </table-->
-
+                
                 </div>
             </div>
         </div>
+
+
+    <?php 
+        }else {
+          echo  "<h3>".$_SESSION['Username'] ." nuk keni te drejte qasjeje ne dashboard</h3>";
+        }
+    ?>
+    <script type="text/javascript" src="../JavaScript/responsive.js"></script>
     </body>
 
-
-
-
-    
 </html>
