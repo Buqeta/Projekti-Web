@@ -108,11 +108,16 @@
     .dash-container {
         flex-direction:column;
        justify-content: space-around;
+       margin-top: 150px;
     }
     .dash-left{
         width:80%;
         text-align: center;
         padding-right: 10px;
+        margin-top: 100px;
+    }
+    .dashLeft a{
+        text-align:left;
     }
     .dashText {
         text-align: center;

@@ -1,11 +1,16 @@
 <?php
     session_start();
+    include "../Includes/getCoursesUser.php";
 ?>
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Dashboard</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/navigationBar.css">
         <link rel="stylesheet" href="../css/mainHeader.css">
         <link rel="stylesheet" href="../css/dashboard.css">
@@ -51,23 +56,31 @@
     ?>
         <h1 class='dashText'>Dashboard</h1>
         <!--h3 id="welcome">Welcome, <?php// echo $_SESSION['Username']?></h3-->
+    <?php    //foreach($coursesUser as $course) {?>
         <div class='dash-container'>
             <div class='dash-left'>
+                    <a href="dashboard.php">My Profile</a><br>
                     <a href="dashCourses.php">Active Courses</a><br>
                     <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                     <a href="listoStudentet.php">Edit Students</a>
+                    <a href="dashContact.php">Contacts</a>
             </div>
-            <div class ='dash-right'>
+            <div class ='dash-right dashDashright'>
+                    <a href="#"><?php echo "ID: ". $_SESSION["userID"]?></a><br>
+                    <a href="#"><?php echo "Emri: ". $_SESSION["FirstName"]?></a><br>
+                    <a href="#"><?php echo "Username: ". $_SESSION["Username"]?></a><br>
+                    <a href="#"><?php echo "E-Mail: ". $_SESSION["E_Mail"]?></a><br>
                 
-                </div>
+            </div>
             </div>
         </div>
 
-
+       <?php    // }?>
     <?php 
         }else {
           echo  "<h3>".$_SESSION['Username'] ." nuk keni te drejte qasjeje ne dashboard</h3>";
         }
+    
     ?>
     <script type="text/javascript" src="../JavaScript/responsive.js"></script>
     </body>

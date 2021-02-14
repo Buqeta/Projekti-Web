@@ -18,6 +18,7 @@
     padding-top:80px;
     padding-left:20px;
     background-color:rgba(14, 117, 185, 0.842);
+    text-align: left;
 }
 
 
@@ -28,6 +29,26 @@
    /* padding-top:80px;*/
     padding-left:20px;
 }
+.dashDashright {
+    margin-left:20px;
+    width:350px;
+    height:400px;
+    border: 3px solid rgb(187, 183, 183);
+    padding-top:80px;
+    padding-left:20px;
+    margin-left:350px;
+    margin-top: 80px;
+    background-color: rgba(204, 215, 221, 0.904);
+}
+
+.dashDashright a {
+    text-decoration: none;
+    font-size:25px;
+    line-height: 2.5em;
+    color:rgb(75, 79, 80);
+    font-weight: bold;
+}
+
 
 
 /*Stilizimi i listes se studenteve*/
@@ -53,6 +74,10 @@ padding-top: 12px;
   text-align: left;
   background-color: #4CAF50;
   color: white;
+}
+.dashTab td{
+    font-weight: bold;
+    color:#323235e8;
 }
 
 .deletebutoni {
@@ -93,6 +118,21 @@ padding-top: 12px;
 }
 .dash-left a:hover {
     text-decoration: underline;
+}
+.backbtn{
+    width: 25%;
+    background-color: #2f89b3b2;
+    color: white;
+    padding: 14px 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.backbtn a {
+    text-decoration: none;
+    font-size:20px;
+    font-weight: bold;
 }
 
 

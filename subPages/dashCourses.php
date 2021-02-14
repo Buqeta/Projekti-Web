@@ -1,8 +1,16 @@
+<?php
+    session_start();
+ 
+?>
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Dashboard</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/navigationBar.css">
         <link rel="stylesheet" href="../css/mainHeader.css">
         <link rel="stylesheet" href="../css/dashboard.css">
@@ -36,7 +44,7 @@
                 <ul class='navList' id='ul2'>
                     <li><a href="../index.php"><br>Home</a></li>
                     <li id='dashboard'><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="../LogOut.php">Logout<a></li>
+                    <li><a href="../Includes/logout.php">Logout<a></li>
                 </ul>
             </div>
         </div>
@@ -49,9 +57,11 @@
         ?>
         <div class='dash-container'>
             <div class='dash-left'>
+                <a href="dashboard.php">My Profile</a><br>
                 <a href="#">Active Courses</a><br>
                 <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                 <a href="listoStudentet.php">Edit Students</a>
+                <a href="dashContact.php">Contacts</a>
             </div>
             <div class ='dash-right'>
             <table class="dashTab">
@@ -64,9 +74,15 @@
                     </tr>
                     
                     <?php
+                     
                         require_once("../includes/connectDB.php");
-                            $sql= "SELECT c.CourseID, c.Course_Name, COUNT(uc.User_ID)as CountUser from course c, user_course uc where c.CourseID=uc.CourseID GROUP BY c.CourseID, c.Course_Name";
-                            
+                        $userii=$_SESSION['userID'];
+                            //$sql= "SELECT c.CourseID, c.Course_Name, COUNT(uc.User_ID)as CountUser from course c, user_course uc where c.CourseID=uc.CourseID GROUP BY c.CourseID, c.Course_Name";
+                            $sql="SELECT c.Course_Name, c.CourseID , COUNT(uc.User_ID)as CountUser
+                                From user_course uc inner join course c 
+                                where uc.CourseID=c.CourseID and uc.User_ID=$userii
+                                group by c.Course_Name, c.CourseID";
+                                
                             $result=mysqli_query($conn,$sql);
                     
                         if(mysqli_num_rows($result)>0) {
@@ -86,8 +102,9 @@
                                 echo "Nuk ka lende te shtuara";
                             }
                             mysqli_close($conn); 
-                        
+                      
                         ?>
+                        
                 </table>
             </div>
         </div>
