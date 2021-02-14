@@ -103,6 +103,32 @@
         object-fit:contain;
     }*/
 
+    /*Pjesa e dashboard*/
+    
+    .dash-container {
+        flex-direction:column;
+       justify-content: space-around;
+    }
+    .dash-left{
+        width:80%;
+        text-align: center;
+        padding-right: 10px;
+    }
+    .dashText {
+        text-align: center;
+    }
+
+  
+   
+    .dash-right {
+        margin-left: 0px;
+        width:80%;
+    }
+
+    .dashtabres{
+        width:500px;
+    }
+
 
    
    

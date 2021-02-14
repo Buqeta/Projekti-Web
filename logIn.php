@@ -25,10 +25,10 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <?php
-                        if (isset($_SESSION["Role"]) && $_SESSION['Role'] == 1) {
-                            echo '<li><a href="subpages/dashboard.php">Dashboard</a></li>';
-                            header("Location: subpages/dashboard.php");
-                        }
+                    if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 1){
+                        echo '<li><a href="subPages/dashboard.php">Dashboard</a></li>';
+                        header("Location: subPages/dashboard.php");
+                    }
                     ?>
                     <?php
                     if(isset($_SESSION["Role"]) && $_SESSION['Role'] == 0){
