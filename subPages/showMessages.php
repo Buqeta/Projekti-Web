@@ -84,58 +84,36 @@
                     <tr> 
                         <!--td colspan=4><?php //echo $_SESSION['Username']?></td-->
                     </tr>
-                    <tr><td>Course ID</td>
-                        <td>Course Name</td>
-                        <td>Enrollment date</td>
-                        <!--td>Unenroll this user</td-->
+                    <tr><td>FormID</td>
+                        <td>Subject</td>
+                        <td>Text</td>
+                        <td>Date</td>
                     </tr>
                     
                     <?php
                         require_once("../includes/connectDB.php");
-                        $idja=$_POST['lend_Us'];
-                            /*
-                            $sql1="SELECT uc.CourseID, c.Course_Name from user_course uc inner join user u  on u.UserID=uc.User_ID 
-                                    inner join course c on uc.User_Course_ID=c.CourseID
-                                    where u.UserID=$idja";*/
-                            $sql="SELECT c.Course_Name, c.CourseID, uc.Date
-                            FROM user u INNER JOIN user_course uc 
-                            ON u.UserID = uc.User_ID 
-                            INNER JOIN course c 
-                            ON c.CourseID = uc.CourseID
-                            WHERE u.UserID = $idja";
-                            //$sql="SELECT * from user u where u.Role=1";
+                    
+                            $idjia=$_POST['messages_us'];
+                            $sql="SELECT u.UserID, c.Subject,c.Content, c.date 
+                                    from user u inner join contactform c on u.UserID=c.UserID
+                                    where u.UserID=$idjia";
                             $result=mysqli_query($conn,$sql);
                     
                         if(mysqli_num_rows($result)>0) {
                                 while($row=mysqli_fetch_array($result)) {
                         ?>
                                     <tr>
-                                        <td><?php echo $row['CourseID'];?></td>
-                                        <td><?php echo $row['Course_Name'];?></td>
-                                        <td><?php echo $row['Date'];?></td>
-                                        <!--td><?php// echo $row['UserID'];?></td-->
-                                        <!--td><input type="text" name="useridj" value="<?php //echo $row['UserID']; ?>"></td-->
+                                        <td><?php echo $row['UserID'];?></td>
+                                        <td><?php echo $row['Subject'];?></td>
+                                        <td><?php echo $row['Content'];?></td>
+                                        <td><?php echo $row['date'];?></td>
                                         
-                                        <!--td>
-                                            <form action='unenrollStud.php' method="post">
-                                                <input type="hidden" name="unenroll_id" value="<?php echo $row['CourseID']; ?>">
-                                                <button type="submit" class="deletebutoni" name="unenrollbtn"class="deletebtn">Unenroll</button>
-                                            </form>
-                                        </td-->
-
-
                                     </tr>
-
-                                    <?php
-                                    //echo "<tr><td>". $row['UserID']. "</td><td>".$row["First_Name"]."</td><td>".$row["Last_Name"]."</td><td>".$row["Username"]."</td><td>".$row['E_Mail']."</td><td><input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input></td><tr>";
-                                    //<input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input>
-                                //   echo "<input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input>";
-                                    ?>
                             <?php }
                                 echo "</table>";
                             }
                             else {
-                                echo "Nuk ka lende te shtuara";
+                                echo "Nuk ka shkruar asnje mesazh".$idjia;
                             }
                             mysqli_close($conn); 
                         
@@ -146,9 +124,7 @@
                 
 
                 </table>
-                
-                    <button type="submit" name="back" class="backbtn"><a href="listoStudentet.php">Back</a></button>
-                
+                <button type="submit" name="back" class="backbtn"><a href="dashContact.php">Back</a></button>
             </div>
         </div>
         <script type="text/javascript" src="../JavaScript/responsive.js"></script>
