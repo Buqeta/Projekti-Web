@@ -14,7 +14,7 @@ require_once("../Includes/connectDB.php");
             
         }
         else {
-            //echo "Error deleting recors: " . mysqli_error($conn);
+            echo "Error deleting recors: " . mysqli_error($conn);
            // $_SESSION['status']
            echo "Gabimi";
            

@@ -86,10 +86,16 @@
                     <?php
                         require_once("../includes/connectDB.php");
                         $idja=$_POST['lend_Us'];
-                
-                            $sql="SELECT uc.CourseID, c.Course_Name from user_course uc inner join user u  on u.UserID=uc.User_ID 
+                            /*
+                            $sql1="SELECT uc.CourseID, c.Course_Name from user_course uc inner join user u  on u.UserID=uc.User_ID 
                                     inner join course c on uc.User_Course_ID=c.CourseID
-                                    where u.UserID=$idja";
+                                    where u.UserID=$idja";*/
+                            $sql="SELECT c.Course_Name, c.CourseID
+                            FROM user u INNER JOIN user_course uc 
+                            ON u.UserID = uc.User_ID 
+                            INNER JOIN course c 
+                            ON c.CourseID = uc.CourseID
+                            WHERE u.UserID = $idja";
                             //$sql="SELECT * from user u where u.Role=1";
                             $result=mysqli_query($conn,$sql);
                     
