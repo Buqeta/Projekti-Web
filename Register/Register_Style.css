@@ -113,9 +113,6 @@ form h2{
     border-radius: 3px;
 }
 
-.form-element.success input{
-    border-color: #2ecc71;
-}
 
 .form-element.error p{
     visibility: visible;
@@ -128,10 +125,6 @@ form h2{
     visibility: hidden;
 }
 
-p.pSuccess{
-    visibility: visible;
-    color: white;
-}
 
 #submit_btn{
     width: 100%;

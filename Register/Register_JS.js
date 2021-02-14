@@ -80,19 +80,6 @@ function error(element, message){
     form_element.classList.add("error");
 }
 
-//function success(element){
-  //  const form_element = element.parentElement;
-  //  form_element.classList.remove("error");
-    //form_element.classList.add("success");
-//}
-
-//function successP(element, message){
-  //  const p = element.nextElementSibling;
-   // p.innerHTML = message;
-
-//    p.classList.add("pSuccess");
-//}
-
 function validate_email(emaili){
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailRegex.test(emaili);
