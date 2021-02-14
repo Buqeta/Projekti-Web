@@ -73,10 +73,10 @@
                     <?php
                      
                         require_once("../includes/connectDB.php");
-                        $userii=$_SESSION['userID'];
+                        
                             $sql="SELECT c.Course_Name, c.CourseID , COUNT(uc.User_ID)as CountUser
                                 From user_course uc inner join course c 
-                                where uc.CourseID=c.CourseID and uc.User_ID=$userii
+                                where uc.CourseID=c.CourseID
                                 group by c.Course_Name, c.CourseID";
                                 
                             $result=mysqli_query($conn,$sql);
