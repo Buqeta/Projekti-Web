@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,22 +47,32 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li id='home'><a href="index.php"><br>Home</a></li>
-                    <li><a href="subPages/Courses.php"><br>Courses</a></li>
-                    <li><a href="logIn.php"><br>Login</a></li>
-                    <li><a href="Register.php"><br>Register</a></li>
-
+                    <li id='home'><a href="index.php">Home</a></li>
                     <?php
-                        if (isset($_SESSION["role"]) && $_SESSION['role'] == '1') {
-                    ?>
-
-                    <a href="../views/dashboard.php">
-                        <li><a href="subPages/dashboard.php">Dashboard</a></li>
-                    </a>
-                    <?php
+                        if (isset($_SESSION['Role']) && $_SESSION['Role'] == 1) {
+                            echo "<li><a href='subPages/dashboard.php'>Dashboard</a></li>";
+                            echo "<li><a href='includes/logout.php'>Logout<a></li>";
                         }
+                   
+                        else if (isset($_SESSION['Role']) && $_SESSION['Role'] == 0) {
+                            echo "<li><a href='subPages/Courses.php'>Courses</a></li>";
+                            echo "<li><a href='account.php'>Account</a></li>";
+                            
+                            echo "<li><a href='contact.php'>Contact Us<a></li>";
+                            
+                        }
+                        else {
+                            echo "<li><a href='subPages/Courses.php'>Courses</a></li>";
+                            echo "<li><a href='logIn.php'>Login<a></li>";
+                            echo "<li><a href='Register.php'>Register</a></li>";
+                            
+                             
+                        }
+                    
                     ?>
-                    <!--li><a href="#"><br>Login</a></li-->
+                    <?php
+                        
+                    ?>
                 </ul>
             </div>
         </div>
@@ -114,15 +128,6 @@
                 </div>
 
             </div>
-        <!--headeri-->
-        <!--div id="header"> 
-            <div class='innerBackimg'>
-                <h1>Success doesn't come to you,<br>
-                YOU GO TO IT</h1>
-                
-            </div>
-        </div-->
-
         <!--maini-->
         <div class='main'>
             <!--upperMain-->
@@ -243,61 +248,5 @@
         <script type="text/javascript" src="JavaScript/slider.js"></script>
         <script type="text/javascript" src="JavaScript/responsive.js"></script>
 
-
-        <!--footer-->
-        <div class='footer'>
-            <p>@OnlineGeek</p>
-            
-
-        </div>
-
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-        
-    
-
-
-<!--
-    <div class='main'>
-            upperMain
-            <div class='upperMain' id='courses'>
-                <div class='box-container'>
-                    <a href="" alt="Kimia"><img src='Ikonat/atom.png'></a>
-                    <h4>Chemistry</h4>
-                </div>
-                <div class='box-container'>
-                    <img src='Ikonat/atom.png'>
-                    <h4>Biologji</h4>
-                </div>
-                <div class='box-container'>
-                    <img src='Ikonat/atom.png'>
-                    <h4>fizik</h4>
-                </div>
-                <div class='box-container'>
-                    <img src='Ikonat/atom.png'>
-                    <h4>Matematik</h4>
-                </div>
-                <div class='box-container'>
-                    <img src='Ikonat/atom.png'>
-                    <h4>kompjuterik</h4>
-                </div>
-
-            </div>
-
-            <!--downMain
-            <div></div>
-        </div>
-
--->
