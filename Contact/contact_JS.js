@@ -1,34 +1,31 @@
-
-
 function validate(){
     const username = document.getElementById("username");
-    const password = document.getElementById("password");
+    const textarea = document.getElementById("textarea");
     
 
     const username_Value = username.value;
-    const password_Value = password.value;
+    const textarea_Value = textarea.value;
 
 
-    if(username_Value === "" && password_Value === ""){
-        error(username, "Username cannot be blank!");
-        error(password, "Password cannot be blank!");
+    if(username_Value === "" && textarea_Value === ""){
+        error(username, "Subject cannot be blank!");
+        error(textarea, "Content cannot be blank!");
         return false;
     }
     else if(username_Value === ""){
-        error(username, "Username cannot be blank!");
+        error(username, "Subject cannot be blank!");
         return false;
     }
-    else if(password_Value === ""){
-        error(password, "Password cannot be blank!");
+    else if(textarea_Value === ""){
+        error(textarea, "Content cannot be blank!");
         return false;
     }
     else{
         error(username, "");
-        error(password, "");
+        error(textarea, "");
         return true;
     }
 }
-
 
 function error(element, message){
     const form_element = element.parentElement;

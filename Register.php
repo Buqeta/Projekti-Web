@@ -21,20 +21,12 @@
                     </li>
                 </ul>
             </div>
-            <!--Hamburgeri-->
-            <a href='#' class='butoni'>
-                <span class='bar'></span>
-                <span class='bar'></span>
-                <span class='bar'></span>
-
-            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <li><a href="logIn.php">Log In</a></li>
                     <li id="register"><a href="#" id="aReg">Register</a></li>
-                    <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
@@ -106,6 +98,5 @@
 
         </div>
           <script type="text/javascript" src="Register/Register_JS.js"></script> 
-          <script type="text/javascript" src="JavaScript/responsive.js"></script>
     </body>
 </html>

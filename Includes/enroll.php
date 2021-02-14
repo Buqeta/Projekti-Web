@@ -16,7 +16,7 @@ if(isset($_POST['enroll'])){
     else{
         $courseID = getCourseID($conn, $course);
         if($courseID != -1){
-            $sql2 = "INSERT INTO user_course (CourseID, User_ID) VALUES ('$courseID', '$user')";
+            $sql2 = "INSERT INTO user_course (CourseID, User_ID, Date) VALUES ('$courseID', '$user', NOW())";
             if($result2 = mysqli_query($conn, $sql2)){
                 header("Location: ../account.php?success=trueEnroll");
                 exit();

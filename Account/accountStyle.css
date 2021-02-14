@@ -68,7 +68,7 @@
 
 .main{
     background-image: linear-gradient(to bottom, #0a2d62, #21407e, #34559b, #486bb9, #5b81d8);
-    height: 94vh;
+    height: 92vh;
     overflow: auto;
 }
 
@@ -294,7 +294,7 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
     #logo {
-        width: 45%;
+        width: 35%;
     }
 
     .navList li {

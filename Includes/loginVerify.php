@@ -37,12 +37,9 @@ if(isset($_POST['LogInBtn'])){
                     $_SESSION['E_Mail'] = $row['E_Mail'];
                     $_SESSION['Role'] = $row['Role'];
                     
-                    //header("Location: ../logIn.php?success=true");
-                    if ($_SESSION['Role']==1) {
-                        header("Location: ../subPages/dashboard.php");
-                    }
+                    header("Location: ../logIn.php?success=true");
+                    exit();
                     
-                   // exit();
                 }
                 else{
                     header("Location: ../logIn.php?error=wrongPassword");

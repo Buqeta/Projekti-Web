@@ -20,22 +20,14 @@
                     </li>
                 </ul>
             </div>
-            <!--Hamburgeri-->
-            <a href='#' class='butoni'>
-                <span class='bar'></span>
-                <span class='bar'></span>
-                <span class='bar'></span>
-
-            </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <?php
-                        if (isset($_SESSION["role"]) && $_SESSION['role'] == 1) {
-                    ?>
-                    <li><a href="subpages/dashboard.php">Dashboard</a></li>
-                    <?php
+                        if (isset($_SESSION["Role"]) && $_SESSION['Role'] == 1) {
+                            echo '<li><a href="subpages/dashboard.php">Dashboard</a></li>';
+                            header("Location: subpages/dashboard.php");
                         }
                     ?>
                     <?php
@@ -46,7 +38,6 @@
                     ?>
                     <li id="login"><a href="logIn.php" id="aLog">Log In</a></li>
                     <li><a href="Register.php" >Register</a></li>
-                    <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
@@ -69,7 +60,7 @@
                 <?php
                     if(isset($_GET['error'])){
                     ?>
-                        <p <?php echo 'style = "visibility: visible; color: white; text-align: center;"'?>>
+                        <?php echo '<p style = "visibility: visible; color: white; text-align: center;">'?>
                         <?php 
                             if($_GET['error'] == 'emptyFields')
                                 echo 'Fields cannot be empty!';
@@ -80,7 +71,7 @@
                             else if($_GET['error'] == 'sqlError')
                                 echo 'Something went wrong!';
                             else
-                                echo 'You have successfully logged in!';
+                                echo '';
                         ?>
                         
                         </p>
@@ -94,6 +85,5 @@
 
         </div>
         <script type = "text/javascript" src="Login/logIn_JS.js"></script>
-        <script type="text/javascript" src="JavaScript/responsive.js"></script>
     </body>
 </html>

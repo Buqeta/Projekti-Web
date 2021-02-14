@@ -112,14 +112,6 @@ form h2{
     border-radius: 3px;
 }
 
-.form-element.success input{
-    border-color: #2ecc71;
-}
-
-.form-element.error input{
-    border-color: red;
-}
-
 .form-element.error p{
     visibility: visible;
     color: white;
@@ -131,10 +123,6 @@ form h2{
     visibility: hidden;
 }
 
-p.pSuccess{
-    visibility: visible;
-    color: white;
-}
 
 #submit_btn{
     width: 100%;
@@ -221,7 +209,7 @@ a{
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
     #logo {
-        width: 52%;
+        width: 32%;
     }
 
     .navList li {

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Log In Form</title>
+        <title>Account</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="Account/accountStyle.css" type="text/css">
@@ -25,6 +25,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="subPages/Courses.php">Courses</a></li>
                     <li id="login"><a href="account.php" id="aLog">Account</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
         </div>
