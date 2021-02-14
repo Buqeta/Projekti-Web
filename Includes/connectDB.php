@@ -5,7 +5,6 @@ $dbUsername = "root";
 $dbPassword = "";
 $dbName = "projekti";
 
-
 $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
 
 

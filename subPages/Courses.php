@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,14 +38,25 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <!--li><br><a href="../index.php">Home</a></li>
-                    <li id='aboutUs'><a href="#"><br><a href="Courses.php">Courses</a></a></li>
-                    <li><a href="../logIn.php"><br>Login</a></li>
-                    <li><a href="../Register.php"><br>Register</a></li-->
-                    <li><a href="../index.php"><br>Home</a></li>
-                    <li id='coursesNav'><a href="Courses.php"><br>Courses</a></li>
-                    <li><a href="../logIn.php"><br>Login</a></li>
-                    <li><a href="../Register.php"><br>Register</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li id='coursesNav'><a href="Courses.php">Courses</a></li>
+                    <?php
+                        if (isset($_SESSION['Role']) && $_SESSION['Role'] == 1) {
+                            echo "<li><a href='subPages/dashboard.php'>Dashboard</a></li>";
+                            echo "<li><a href='../includes/LogOut.php'>Logout<a></li>";
+                        }
+                   
+                        else if (isset($_SESSION['Role']) && $_SESSION['Role'] == 0) {
+                            echo "<li><a href='../account.php'>Account</a></li>";
+                            echo "<li><a href='../contact.php'>Contact Us<a></li>";
+                        }
+                        else {
+                            echo "<li><a href='../logIn.php'>Login<a></li>";
+                            echo "<li><a href='../Register.php'>Register</a></li>";
+                             
+                        }
+                    
+                    ?>
                     
                 </ul>
             </div>
@@ -151,17 +166,6 @@
 
         </div>
 
-        <!--footer-->
-        <footer>
-            <div class='footer'>
-                cemckf;evc
-                cffff
-                dceceffderc
-                cvercvre
-                vcrferef
-
-            </div>
-        </footer>
         <script type="text/javascript" src="../JavaScript/responsive.js"></script>
 
     </body>

@@ -43,9 +43,9 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li><a href="../index.php"><br>Home</a></li>
-                    <li id='dashboard'><a href="dashboard.php"><br>Dashboard</a></li>
-                    <li><a href="../includes/LogOut.php"><br>Logout<a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li id='dashboard'><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="../includes/LogOut.php">Logout<a></li>
                 </ul>
             </div>
         </div>
@@ -55,13 +55,11 @@
         if (isset($_SESSION["Role"]) && $_SESSION['Role'] == '1') {
     ?>
         <h1 class='dashText'>Dashboard</h1>
-        <!--h3 id="welcome">Welcome, <?php// echo $_SESSION['Username']?></h3-->
-    <?php    //foreach($coursesUser as $course) {?>
+
         <div class='dash-container'>
             <div class='dash-left'>
             <a href="dashboard.php">My Profile</a><br>
                     <a href="dashCourses.php">Active Courses</a><br>
-                    <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                     <a href="listoStudentet.php">Edit Students</a>
                     <a href="#">Contact</a>
             </div>
@@ -76,12 +74,10 @@
                         <td>Show messages</td>
                     </tr>
                     <?php
-                        //require_once("../includes/connectDB.php");
                         $userii=$_SESSION['userID'];
                         $sql="SELECT * 
                             from user
                             where Role=0";
-                        //$sql="SELECT * from user u where u.Role=1";
                         $result=mysqli_query($conn,$sql);
                 
                        if(mysqli_num_rows($result)>0) {
@@ -93,9 +89,6 @@
                                     <td><?php echo $row['Last_Name'];?></td>
                                     <td><?php echo $row['Username'];?></td>
                                     <td><?php echo $row['E_Mail'];?></td>
-                                    
-                                    <!--td><?php //echo $row['Course_Name'];?></td-->
-                                    <!--td><?php //echo $row['User_Course_ID'];?></td-->
                                     <td>
                                         <form action='showMessages.php' method="post">
                                             <input type="hidden" name="messages_us" value="<?php echo $row['UserID']; ?>">
@@ -105,12 +98,6 @@
 
 
                                 </tr>
-
-                                 <?php
-                                //echo "<tr><td>". $row['UserID']. "</td><td>".$row["First_Name"]."</td><td>".$row["Last_Name"]."</td><td>".$row["Username"]."</td><td>".$row['E_Mail']."</td><td><input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input></td><tr>";
-                                //<input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input>
-                             //   echo "<input type='submit' id='submit_btn' name ='deletebtn' value = 'Delete'></input>";
-                                ?>
                            <?php }
                             echo "</table>";
                          }
@@ -122,8 +109,6 @@
                 
             </div>
         </div>
-
-       <?php    // }?>
     <?php 
         }else {
           echo  "<h3>".$_SESSION['Username'] ." nuk keni te drejte qasjeje ne dashboard</h3>";

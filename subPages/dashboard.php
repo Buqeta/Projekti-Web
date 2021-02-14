@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="../css/navigationBar.css">
         <link rel="stylesheet" href="../css/mainHeader.css">
         <link rel="stylesheet" href="../css/dashboard.css">
-        <link rel="stylesheet" type="text/css" href="css/responsive.css">
         <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+       
 
         
 
@@ -43,9 +43,12 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li><a href="../index.php"><br>Home</a></li>
-                    <li id='dashboard'><a href="dashboard.php"><br>Dashboard</a></li>
-                    <li><a href="../includes/LogOut.php"><br>Logout<a></li>
+                    <li><a href="../index.php">Home</a></li>
+                  
+                   
+                         <li id='dashboard'><a href='dashboard.php'>Dashboard</a></li>
+                         <li><a href='../includes/LogOut.php'>Logout<a></li>
+                  
                 </ul>
             </div>
         </div>
@@ -55,13 +58,11 @@
         if (isset($_SESSION["Role"]) && $_SESSION['Role'] == '1') {
     ?>
         <h1 class='dashText'>Dashboard</h1>
-        <!--h3 id="welcome">Welcome, <?php// echo $_SESSION['Username']?></h3-->
-    <?php    //foreach($coursesUser as $course) {?>
+        
         <div class='dash-container'>
             <div class='dash-left'>
                     <a href="dashboard.php">My Profile</a><br>
                     <a href="dashCourses.php">Active Courses</a><br>
-                    <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                     <a href="listoStudentet.php">Edit Students</a>
                     <a href="dashContact.php">Contacts</a>
             </div>
@@ -75,12 +76,12 @@
             </div>
         </div>
 
-       <?php    // }?>
     <?php 
         }else {
-          echo  "<h3>".$_SESSION['Username'] ." nuk keni te drejte qasjeje ne dashboard</h3>";
+            header("Location:../logIn.php");
+
+            exit();
         }
-    
     ?>
     <script type="text/javascript" src="../JavaScript/responsive.js"></script>
     </body>

@@ -42,14 +42,9 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li><a href="../index.php"><br>Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li id='dashboard'><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="../includes/logout.php">Logout<a></li>
-                    <!--li><a href="subPages/Courses.php"><br>Courses</a></li>
-                    <li><a href="logIn.php"><br>Login</a></li>
-                    <li><a href="Register.php"><br>Register</a></li-->
-                    
-                    <!--li><a href="#"><br>Login</a></li-->
                 </ul>
             </div>
         </div>
@@ -57,16 +52,6 @@
 
 
         <h1 class='dashText'>Dashboard</h1>
-        <!--table>
-            <tr>
-                <td>First Name</td>
-                <td>Last Name </td>
-                 <td>Username </td>
-                <td>Email</td>
-                <td>Modify</td>
-                <td>Delete user</td>
-        </tr>
-        </table-->
         <?php 
             include "fshijStdentet.php";
         ?>
@@ -74,16 +59,11 @@
             <div class='dash-left'>
                 <a href="dashboard.php">My Profile</a><br>
                 <a href="dashCourses.php">Active Courses</a><br>
-                <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                 <a href="listoStudentet.php">Edit Students</a>
                 <a href="dashContact.php">Contacts</a>
-
             </div>
             <div class ='dash-right'>
                 <table class="dashTab">
-                    <tr> 
-                        <!--td colspan=4><?php //echo $_SESSION['Username']?></td-->
-                    </tr>
                     <tr><td>FormID</td>
                         <td>Subject</td>
                         <td>Text</td>
@@ -118,11 +98,6 @@
                             mysqli_close($conn); 
                         
                         ?>
-
-                         
-
-                
-
                 </table>
                 <button type="submit" name="back" class="backbtn"><a href="dashContact.php">Back</a></button>
             </div>

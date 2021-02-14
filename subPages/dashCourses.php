@@ -42,7 +42,8 @@
             </a>
             <div class='navFund'>
                 <ul class='navList' id='ul2'>
-                    <li><a href="../index.php"><br>Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                   
                     <li id='dashboard'><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="../Includes/logout.php">Logout<a></li>
                 </ul>
@@ -59,15 +60,11 @@
             <div class='dash-left'>
                 <a href="dashboard.php">My Profile</a><br>
                 <a href="#">Active Courses</a><br>
-                <!--a href="#">Kliko ketu per te shtuar kurse te reja</a><br-->
                 <a href="listoStudentet.php">Edit Students</a>
                 <a href="dashContact.php">Contacts</a>
             </div>
             <div class ='dash-right'>
             <table class="dashTab">
-                    <tr> 
-                        <!--td colspan=4><?php// echo $_SESSION['Username']?></td-->
-                    </tr>
                     <tr><td>Course ID</td>
                         <td>Course Name</td>
                         <td>Number of users</td>
@@ -76,11 +73,10 @@
                     <?php
                      
                         require_once("../includes/connectDB.php");
-                        $userii=$_SESSION['userID'];
-                            //$sql= "SELECT c.CourseID, c.Course_Name, COUNT(uc.User_ID)as CountUser from course c, user_course uc where c.CourseID=uc.CourseID GROUP BY c.CourseID, c.Course_Name";
+                        
                             $sql="SELECT c.Course_Name, c.CourseID , COUNT(uc.User_ID)as CountUser
                                 From user_course uc inner join course c 
-                                where uc.CourseID=c.CourseID and uc.User_ID=$userii
+                                where uc.CourseID=c.CourseID
                                 group by c.Course_Name, c.CourseID";
                                 
                             $result=mysqli_query($conn,$sql);
@@ -92,19 +88,15 @@
                                         <td><?php echo $row['CourseID'];?></td>
                                         <td><?php echo $row['Course_Name'];?></td>
                                         <td><?php echo $row['CountUser'];?></td>
-                                        <!--td><?php// echo $row['UserID'];?></td-->
-                                        
                                     </tr>
                             <?php }
                                 echo "</table>";
                             }
                             else {
-                                echo "Nuk ka lende te shtuara";
+                                echo "There are not any enrolled courses!";
                             }
-                            mysqli_close($conn); 
-                      
+                            mysqli_close($conn);                      
                         ?>
-                        
                 </table>
             </div>
         </div>
