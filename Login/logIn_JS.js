@@ -8,25 +8,28 @@ function validate(){
     const username_Value = username.value;
     const password_Value = password.value;
 
-
-    if(username_Value === "" && password_Value === ""){
+    
+    if(username_Value === ""){
         error(username, "Username cannot be blank!");
-        error(password, "Password cannot be blank!");
-        return false;
-    }
-    else if(username_Value === ""){
-        error(username, "Username cannot be blank!");
-        return false;
-    }
-    else if(password_Value === ""){
-        error(password, "Password cannot be blank!");
         return false;
     }
     else{
         error(username, "");
+    }
+    if(password_Value === ""){
+        error(password, "Password cannot be blank!");
+        return false;
+    }
+    else{
+        error(password,"");
+    }
+    if(username_Value !== "" && password_Value !== ""){
+        error(username, "");
         error(password, "");
         return true;
     }
+
+
 }
 
 
