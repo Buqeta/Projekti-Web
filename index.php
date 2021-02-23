@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="css/navigationBar.css">
         <link rel="stylesheet" href="css/mainHeader.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/sliderStyle.css">
         <link rel="stylesheet" type="text/css" href="css/responsive.css">
         

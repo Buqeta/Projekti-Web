@@ -1,6 +1,4 @@
-
-
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width : 320px) and (max-width : 500px){
     .butoni {
         display:flex;
     }
@@ -99,16 +97,13 @@
     .math {
         height:555px;
     }
-   /* .slide img {
-        object-fit:contain;
-    }*/
 
     /*Pjesa e dashboard*/
     
     .dash-container {
         flex-direction:column;
        justify-content: space-around;
-       margin-top: 150px;
+       margin-bottom: 100px;
     }
     .dash-left{
         width:80%;
@@ -128,14 +123,143 @@
     .dash-right {
         margin-left: 0px;
         width:80%;
+        
     }
 
     .dashtabres{
         width:500px;
     }
+}
 
+/*device tjeter*/
+@media only screen and (min-width : 768px) and (max-width : 1024px){
 
+    .butoni {
+        display:flex;
+    }
+    .navList {
+        display:none;
+        flex-direction: column;
+        width:100%;
+    }
+
+    .navBar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navList li {
+        text-align: center;
+        width:1024px;
+        height:50px;
+    }
+
+    .navList.active {
+        display:flex;
+    }
+
+    #logo{
+        margin-left: 450px;
+    }
+
+    /*Pjesa e sliderit*/
+    .slideNumber img{
+        width:500px;
+    }
+
+    .slideText {
+        font-size:40px;
+        margin-top: -355px;
+        margin-left: 400px;
+    }
+
+    .pika {
+        height:15px;
+        width:15px;
+    }
+
+    .upper-UpperMain {
+        flex-direction: column;
+
+    }
+
+    .upper-UpperMain a{
+        padding:10px;
+    }
+
+    .sub-downUpperMain{
+        flex-direction: column;
+        margin:auto;
+        margin-top: 20px;
+       
+    }
+
+    .sub-items {
+        margin-top: 30px;
+    }
+
+    .midMain{
+        flex-direction: column;
+    }
+
+    .midMain img{
+        width:60%;
+    }
+
+    .upper-downMain{
+        flex-direction: column;
+    }
+
+    .upper-downMain img {
+        width:60%;
+    }
+
+    .first-down-downMain{
+        padding:10px;
+    }
+    .bottomMain{
+        flex-direction: column;
+    }
+
+    .bottomMain img{
+        width:80%;
+    }
+
+    /*COurses*/
+
+    .math {
+        height:555px;
+    }
+
+    /*Pjesa e dashboard*/
+    
+    .dash-container {
+        flex-direction:column;
+       justify-content: space-around;
+       /*margin-top: 150px;*/
+       margin-bottom: 100px;
+    }
+    .dash-left{
+        width:90%;
+        text-align: center;
+        padding-right: 10px;
+        margin-top: 100px;
+    }
+    .dashLeft a{
+        text-align:left;
+    }
+    .dashText {
+        text-align: center;
+    }
+
+  
    
-   
-   
+    .dash-right {
+        margin-left: 0px;
+        width:90%;
+    }
+
+    .dashtabres{
+        width:500px;
+    }
 }

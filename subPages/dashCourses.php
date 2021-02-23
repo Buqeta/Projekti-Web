@@ -64,7 +64,7 @@
                 <a href="dashContact.php">Contacts</a>
             </div>
             <div class ='dash-right'>
-            <table class="dashTab">
+                <table class="dashTab">
                     <tr><td>Course ID</td>
                         <td>Course Name</td>
                         <td>Number of users</td>

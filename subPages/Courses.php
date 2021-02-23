@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="../css/navigationBar.css">
         <link rel="stylesheet" href="css/mainHeader.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="../css/courses.css">
         <link rel="stylesheet" href="../css/responsive.css">
     </head>
