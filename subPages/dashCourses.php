@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include "../includes/navigationBar.php";
+    include "../Includes/navigationBar.php";
     include "fshijStdentet.php";
-    require_once("../includes/connectDB.php");
+    require_once("../Includes/connectDB.php");
 ?>
 <!DOCTYPE html>
 <html>

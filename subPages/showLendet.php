@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../includes/navigationBar.php";
+    include "../Includes/navigationBar.php";
 ?>
 <!DOCTYPE html>
 <html>
