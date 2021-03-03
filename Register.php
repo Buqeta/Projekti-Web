@@ -96,5 +96,6 @@
         <div class="contacts" id="contacts-div">
 
         </div>
+        <script type="text/javascript" src="Register/Register_JS.js"></script> 
     </body>
 </html>
