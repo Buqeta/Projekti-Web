@@ -85,8 +85,8 @@ function checkEnrolled(){
             WHERE uc.CourseID IN (SELECT c.CourseID 
                                   FROM course c 
                                   WHERE c.Course_Name ='$course') AND uc.User_ID ='$user';";
-    if($result = mysqli_query($conn, $sql)){    //mysqli_query - ekzekuton queryn
-        if(mysqli_num_rows($result) > 0){       //a kthen me shume se 0 rreshta rezultati?
+    if($result = mysqli_query($conn, $sql)){   
+        if(mysqli_num_rows($result) > 0){       
             return true;
         }
     }
@@ -97,8 +97,8 @@ function getCourseID($conn, $course){
     $sql1 = "SELECT c.CourseID FROM course c WHERE c.Course_Name ='$course'";
     $courseID = -1;
     if($result = mysqli_query($conn, $sql1)){
-        $array = mysqli_fetch_assoc($result);   //e ruan rezultatin si array asociative
-        $courseID =$array['CourseID'];              //kthen id te kursit
+        $array = mysqli_fetch_assoc($result);  
+        $courseID =$array['CourseID'];              
         return $courseID;       
     }
     return $courseID;     

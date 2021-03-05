@@ -3,10 +3,10 @@
 
 
 if(isset($_POST['LogInBtn'])){
-    require 'connectDB.php'; //duhet patjeter te perfshihet
+    require 'connectDB.php'; 
 
 
-    $username = $_POST['username']; //marrim te dhenat nga logIn.php
+    $username = $_POST['username']; 
     $password = $_POST['password'];
 
     if(empty($username) || empty($password)){
@@ -15,9 +15,9 @@ if(isset($_POST['LogInBtn'])){
         exit();
     }
     else{
-        $sql = "SELECT * FROM user WHERE Username = ? OR E_Mail = ?;";//mund te logohen me email ose username
+        $sql = "SELECT * FROM user WHERE Username = ? OR E_Mail = ?;";
         $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt, $sql)){ //kontrollon nese statement nuk funksionon per databazen tone
+        if(!mysqli_stmt_prepare($stmt, $sql)){ 
             header("Location: ../logIn.php?error=sqlError");
             
             exit();
@@ -27,7 +27,7 @@ if(isset($_POST['LogInBtn'])){
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             
-            if($row = mysqli_fetch_assoc($result)){     //a kthen ndonje rezultat query qe e kemi krijuar?
+            if($row = mysqli_fetch_assoc($result)){     
                 if($row['Password'] == $password){
                     session_start();
                     $_SESSION['userID'] = $row['UserID'];

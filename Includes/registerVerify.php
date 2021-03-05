@@ -17,16 +17,16 @@ if(isset($_POST['RegisterBtn'])){
         header("Location: ../Register.php?error=emptyFields");
         exit();
     }
-    else if(preg_match($emailCheck, $email) == 0){ //check if email is valid
+    else if(preg_match($emailCheck, $email) == 0){
         header("Location: ../Register.php?error=invalidEmail");
         exit();
         
     }
-    else if(preg_match($passwordCheck, $pwd) == 0){  //check if password is valid
+    else if(preg_match($passwordCheck, $pwd) == 0){  
         header("Location: ../Register.php?error=invalidPassword");
         exit();
     }
-    else if($pwd2 != $pwd){      //check if pass2 is equal to pass
+    else if($pwd2 != $pwd){      
         header("Location: ../Register.php?error=passwordsDontMatch");
         exit();
     }
@@ -71,7 +71,7 @@ function checkUsername(){
     else{
         mysqli_stmt_bind_param($stmt1, "s", $username);
         mysqli_stmt_execute($stmt1);
-        mysqli_stmt_store_result($stmt1);   //e ruan rezultatin e dhene nga databaza ne variablen $stmt1
+        mysqli_stmt_store_result($stmt1);   
         $resultCheck = mysqli_stmt_num_rows($stmt1);
         if($resultCheck > 0){
             return false;
@@ -91,7 +91,7 @@ function checkEmail(){
     else{
         mysqli_stmt_bind_param($stmt1, "s", $email);
         mysqli_stmt_execute($stmt1);
-        mysqli_stmt_store_result($stmt1);   //e ruan rezultatin e dhene nga databaza ne variablen $stmt1
+        mysqli_stmt_store_result($stmt1);   
         $resultCheck = mysqli_stmt_num_rows($stmt1);
         if($resultCheck > 0){
             return false;

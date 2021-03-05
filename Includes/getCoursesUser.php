@@ -18,7 +18,7 @@ if(mysqli_num_rows($result) > 0){
     }
 }
 
-$coursesUser = array_column($data, 'Course_Name'); //array_column - kthen vlerat nga nje kolone e vetme e input array-t
+$coursesUser = array_column($data, 'Course_Name'); 
 
 
 

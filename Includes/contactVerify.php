@@ -11,7 +11,7 @@ if(isset($_POST['SendBtn'])){
     $content = $_POST['content'];
     
 
-    $sql = "INSERT INTO contactform (Subject, Content, UserID, Date) VALUES ('$subject', '$content', '$user', NOW())"; //NOW() - jep daten dhe kohen e tashme
+    $sql = "INSERT INTO contactform (Subject, Content, UserID, Date) VALUES ('$subject', '$content', '$user', NOW())"; 
 
 
     if($result = mysqli_query($conn, $sql)){
